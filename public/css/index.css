@@ -1,0 +1,28 @@
+#item_1 .content {
+    width: 100%;
+}
+
+#item_1 .content th {
+    height: 40px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+    color: #666;
+    background-color: #f2f2f2;
+}
+
+#item_1 .content tr {
+    height: 30px;
+}
+
+#item_1 .content td {
+    text-align: center;
+    min-width: 50px;
+    padding: 0 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+    height: 28px;
+    line-height: 28px;
+}
