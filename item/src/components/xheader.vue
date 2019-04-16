@@ -12,6 +12,7 @@ export default {
 
 methods:{
   toredact(){
+    //跳路由
          this.$router.push({ name: "redact" });
   }
 
