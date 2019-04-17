@@ -10,7 +10,6 @@
 
 export default {
   name: "xheader",
- 
   methods: {
     toredact() {
       //跳路由

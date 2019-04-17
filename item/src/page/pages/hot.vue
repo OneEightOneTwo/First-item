@@ -10,7 +10,7 @@
 <script>
 import xmain from "../../components/xmain";
 import newHeader from "../../components/newHeader";
-
+import hot from "../../components/newHeader";/////
 export default {
   components: {
     xmain,
