@@ -11,27 +11,42 @@
       </ul>
     </div>
     <div class="main1">
- <div v-show="num===0">热门</div>
- <div v-show="num===1">最新</div>
- <div  v-show="num===2">关注</div>
+      <div v-show="num===0">
+        <div class="article">
+          <div class="username">辣鸡钟林</div>
+          <p>
+           哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+             哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+               哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+                 哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+                   哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+                     哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊     
+        </p>
+         <div class="text-bottom">
+     <span class="time">6分钟</span>
+     <div class="right"> 
+       <span ></span>
+     </div>
+   </div>
+        </div>
+   
+  
+    
+     
+      </div>
+      <div v-show="num===1">最新</div>
+      <div v-show="num===2">关注</div>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: "xmain",
-  data(){
+  data() {
     return {
       num: 0,
-      list: [
-        { name: "热门" },
-        { name: "最新" },
-        { name: "关注" },
-
-      ],
-
-  
-    }
+      list: [{ name: "热门" }, { name: "最新" }, { name: "关注" }]
+    };
   },
 
   methods: {
@@ -64,10 +79,17 @@ export default {
 }
 .main1 {
   margin-top: 50px;
-  height: 900px;
+
 }
-.main1 div {
-  height: 100%;
+
+.article {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+
+}
+.username{
+  height: 20px;
+  padding: 10px;
 }
 </style>
 

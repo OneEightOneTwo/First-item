@@ -1,8 +1,8 @@
 <template>
   <div id="app">
   <div>
-    <Xheader :isShowBack="false" :isShowHam="true">微信</Xheader>
-    <xmain/>>
+    <Xheader :isShowBack="false" :isShowHam="true">树洞</Xheader>
+    <xmain/>
 
   </div>
 

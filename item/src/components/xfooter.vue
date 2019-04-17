@@ -24,7 +24,7 @@ export default {
       img,
       tabbar: [
         // badge打数字
-        { title: "微信",name: "hot" },
+        { title: "树洞",name: "hot" },
         { title: "通讯录",name: "chat" },
         // isBadge这是打红点
         { title: "我" , name: "fcous" },
