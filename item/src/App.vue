@@ -5,11 +5,12 @@
 </template>
 
 <script>
-
+import './js/rem.js'
 </script>
 
 <style>
 #app{
   overflow: hidden;
+
 }
 </style>

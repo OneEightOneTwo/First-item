@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   <div>
-    <Xheader :isShowBack="false" :isShowHam="true">树洞</Xheader>
+    <Xheader >树洞</Xheader>
     <xmain/>
 
   </div>
