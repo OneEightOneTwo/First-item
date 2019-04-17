@@ -9,16 +9,13 @@
 <script>
 export default {
   name: "xheader",
-
-methods:{
-  toredact(){
-    //跳路由
-         this.$router.push({ name: "redact" });
+  methods: {
+    toredact() {
+      //跳路由
+      this.$router.push({ name: "redact" });
+    }
   }
-
-}
-}
-;
+};
 </script>
 <style scoped>
 .header {

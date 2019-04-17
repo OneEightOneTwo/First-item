@@ -13,26 +13,19 @@
     <div class="main1">
       <div v-show="num===0">
         <div class="article">
-          <div class="username">辣鸡钟林</div>
+          <div class="username">!辣鸡钟林</div>
           <p>
-           哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-             哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-               哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-                 哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-                   哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-                     哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊     
-        </p>
-         <div class="text-bottom">
-     <span class="time">6分钟</span>
-     <div class="right"> 
-       <span ></span>
-     </div>
-   </div>
+            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
+          </p>
+          <div class="text-bottom">
+            <span class="time">6分钟</span>
+            <div class="right">
+              <span></span>
+            </div>
+          </div>
         </div>
-   
-  
-    
-     
       </div>
       <div v-show="num===1">最新</div>
       <div v-show="num===2">关注</div>
@@ -79,15 +72,13 @@ export default {
 }
 .main1 {
   margin-top: 50px;
-
 }
 
 .article {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-
 }
-.username{
+.username {
   height: 20px;
   padding: 10px;
 }

@@ -24,11 +24,10 @@ export default {
       img,
       tabbar: [
         // badge打数字
-        { title: "树洞",name: "hot" },
-        { title: "通讯录",name: "chat" },
+        { title: "树洞", name: "hot" },
+        { title: "通讯录", name: "chat" },
         // isBadge这是打红点
-        { title: "我" , name: "fcous" },
-
+        { title: "我", name: "fcous" }
       ],
       // 默认的下标值
       tab: 0
@@ -37,11 +36,10 @@ export default {
   methods: {
     // 切换底部选项卡
     toTab(tab) {
-         
       this.tab = tab;
-   let name = this.tabbar[tab].name;
+      let name = this.tabbar[tab].name;
       // 跳路由
-    this.$router.push({name});
+      this.$router.push({ name });
     }
   }
 };
