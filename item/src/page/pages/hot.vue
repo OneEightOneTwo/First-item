@@ -10,7 +10,7 @@
 <script>
 import xmain from "../../components/xmain";
 import newHeader from "../../components/newHeader";
-import text from "../../components/newHeader"; /////
+import newtext from "../../components/newHeader";//钟林版
 export default {
   components: {
     xmain,
