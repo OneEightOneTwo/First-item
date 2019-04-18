@@ -7,7 +7,7 @@ import home from '../page/home.vue'
 import redact from '../page/redact.vue'
 //底部导航
 import fcous from '../page/pages/fcous.vue'
-import chat from '../page/pages/chat.vue'
+// import xlist from '../page/xlist'
 import hot from '../page/pages/hot.vue'
 //登陆页
 import xlog from '../page/xlog.vue'
@@ -30,9 +30,9 @@ const routes = [{
             component: fcous,
             name: 'fcous',
         }, {
-            path: 'chat',
-            component: chat,
-            name: 'chat'
+            path: 'xlist',
+            component: xlist,
+            name: 'xlist'
         }]
     },
     {

@@ -20,13 +20,14 @@ export default {
   props: {
     back: String,
     title: String,
-    ev: Function,   
+    ev: Function
   },
   methods: {
     backf(value) {
       this.$router.push({ name: value });
     }
-}}
+  }
+};
 </script>
 
 <style scoped>
