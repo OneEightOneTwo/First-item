@@ -12,13 +12,13 @@
         </div>
       </a>
     </div>
-    <!-- <xfooter /> -->
+    <xfooter />
   </div>
 </template>
 <script>
 //引入头部组件
 import newHeader from "../components/newHeader.vue";
-
+import xfooter from '../components/xfooter'
 export default {
   data() {
     return {
@@ -41,7 +41,8 @@ export default {
     };
   },
   components: {
-    newHeader
+    newHeader,
+    xfooter
   }
 };
 </script>
