@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import './js/rem.js'
+
 </script>
 
 <style>

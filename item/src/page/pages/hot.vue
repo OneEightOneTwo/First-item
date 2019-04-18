@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <newHeader :back="'xlog'" :title="'树洞' "></newHeader>
+      <newHeader  :title="'树洞' " :ev="aa" ></newHeader>
       <xmain/>
     </div>
   </div>
@@ -10,12 +10,21 @@
 <script>
 import xmain from "../../components/xmain";
 import newHeader from "../../components/newHeader";
-import newnewtext from "../../components/newHeader";//钟林2代版本  终极测试
+
 export default {
+  data(){ 
+   var  edeaa=this
+    return{
+     aa: function(){
+         edeaa.$router.push({ name:'redact'});
+     }
+    }
+  },
   components: {
     xmain,
     newHeader
   }
+
 };
 </script>
 

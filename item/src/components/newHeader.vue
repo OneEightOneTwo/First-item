@@ -1,10 +1,10 @@
 <template>
   <div class="header">
     <!-- 左侧按钮 -->
-    <div class="back" @click="backf(back)">返回</div>
+    <div class="back" @click="backf(back)" v-if="back">返回</div>
     <div class="head" v-text="title"></div>
     <!-- 右侧按钮 -->
-    <div class="head-right" @click="clickf()">
+    <div class="head-right" @click="ev" v-if="ev">
       <img src="../assets/compile.jpg">
     </div>
   </div>
@@ -17,17 +17,16 @@ export default {
       name: "用户名"
     };
   },
-  props: ["back", "title"],
+  props: {
+    back: String,
+    title: String,
+    ev: Function,   
+  },
   methods: {
     backf(value) {
-      console.log(value);
       this.$router.push({ name: value });
-    },
-    clickf(ev) {
-      ev();
     }
-  }
-};
+}}
 </script>
 
 <style scoped>
