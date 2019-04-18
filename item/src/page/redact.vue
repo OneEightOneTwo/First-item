@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="ceshi">
       <newHeader :back="'hot'" :title="'树洞' " :ev="aa"></newHeader>
       
