@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="nav">
+    <div style="font-size:16px;" class="nav">
       <ul>
         <li
           @click="click1(index)"
@@ -12,20 +12,7 @@
     </div>
     <div class="main1">
       <div v-show="num===0">
-        <div class="article">
-          <div class="username">!辣鸡钟林</div>
-          <p>
-            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-            哈哈哈哈哈啊哈哈哈哈啊啊啊啊啊啊啊啊啊
-          </p>
-          <div class="text-bottom">
-            <span class="time">6分钟</span>
-            <div class="right">
-              <span></span>
-            </div>
-          </div>
-        </div>
+        <sheet/>
       </div>
       <div v-show="num===1">最新</div>
       <div v-show="num===2">关注</div>
@@ -33,6 +20,7 @@
   </div>
 </template>
 <script>
+import sheet from './xjq/sheet.vue'
 export default {
   name: "xmain",
   data() {
@@ -46,6 +34,9 @@ export default {
     click1(index) {
       this.num = index;
     }
+  },
+  components:{
+    sheet
   }
 };
 </script>
