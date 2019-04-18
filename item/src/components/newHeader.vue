@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <!-- 左侧按钮 -->
-    <div class="back" @click="backf(back)" v-if="back">返回</div>
+    <div class="back" @click="backf(back)" v-if="back"  >返回</div>
     <div class="head" v-text="title"></div>
     <!-- 右侧按钮 -->
     <div class="head-right" @click="ev" v-if="ev">
@@ -24,7 +24,10 @@ export default {
   },
   methods: {
     backf(value) {
-      this.$router.push({ name: value });
+      this.$router.push({ name: value }
+      
+      
+      );
     }
   }
 };

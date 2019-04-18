@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuerouter from 'vue-router'
 Vue.use(Vuerouter)
 //主页
-import home from '../page/home.vue'
+import home from '../App.vue'
 //头部编辑
 import redact from '../page/redact.vue'
 //底部导航

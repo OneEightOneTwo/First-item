@@ -23,7 +23,6 @@ export default {
     return {
       img,
       tabbar: [
-        // badge打数字
         { title: "树洞", name: "hot" },
         { title: "通讯录", name: "xlist" },
         // isBadge这是打红点

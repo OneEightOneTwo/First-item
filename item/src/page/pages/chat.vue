@@ -1,10 +1,20 @@
 <template>
-    <div>char页面</div>
+<div> 
+    
+
+    <xfooter/></div>
+
+ 
 </template>
 
 <script>
+import xfooter from '../../components/xfooter'
 
+export default {
+    components:{
+        xfooter
 
-<style>
+    }
+}
+</script>
 
-</style>
