@@ -17,12 +17,14 @@
         </div>
       </a>
     </div>
+    <xfooter />
   </div>
 </template>
 <script>
 //引入头部组件
 import newHeader from "../components/newHeader.vue";
 import store from "../js/vuex.js";
+import xfooter from "../components/xfooter.vue";
 export default {
   store,
   data() {
@@ -47,7 +49,8 @@ export default {
     };
   },
   components: {
-    newHeader
+    newHeader,
+    xfooter
   },
   methods: {
     biubiu(title) {

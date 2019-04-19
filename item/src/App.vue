@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <xfooter></xfooter>
+    <!-- <xfooter></xfooter> -->
   </div>
 </template>
 

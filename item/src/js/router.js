@@ -50,10 +50,6 @@ const routes = [{
         component: xreg,
         name: 'xreg'
     }, {
-        path: '/xlist',
-        component: xlist,
-        name: 'xlist'
-    }, {
         path: '/newHeader',
         component: newHeader,
         name: 'newHeader'

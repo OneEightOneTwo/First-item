@@ -8,6 +8,9 @@
     <XchangeInfo></XchangeInfo>
     <XlogOut></XlogOut>
     <XlogOutOk></XlogOutOk>
+    <div>
+      <xfooter />
+    </div>
   </div>
 </template>
 
@@ -18,6 +21,7 @@ import XchangeInfo from "../../components/xjq/XchangeInfo";
 import XlogOut from "../../components/xjq/XlogOut";
 import XlogOutOk from "../../components/xjq/XlogOutOk";
 import newHeader from "../../components/newHeader";
+import xfooter from "../../components/xfooter";
 export default {
   components: {
     Xgallery,
@@ -25,7 +29,8 @@ export default {
     XchangeInfo,
     XlogOut,
     XlogOutOk,
-    newHeader
+    newHeader,
+    xfooter
   }
 };
 </script>

@@ -55,7 +55,7 @@ input[type="password"]:focus {
   width: 280px;
   border-color: #2ecc71;
 }
-inpu                                                                                                                                                                                                                                                                                                                                 mm {
+input[type="button"] {
   border: 0;
   background: none;
   display: inline-block;
