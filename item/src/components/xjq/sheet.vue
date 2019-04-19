@@ -180,11 +180,19 @@
   color: #252525;
 }
 .m_bottom .likenum {
+<<<<<<< HEAD
   margin-left: 0.1rem;
   font-size: 0.5rem;
 }
 .m_bottom .replynum {
   margin-left: 0.1rem;
+=======
+  margin-left: 0.25rem;
+  font-size: 0.5rem;
+}
+.m_bottom .replynum {
+  margin-left: 0.305556rem;
+>>>>>>> 8d3c64b0317b1d6de805d548c05fe0eb9676d3b3
   font-size: 0.5rem;
 }
 .m_bottom .more {
