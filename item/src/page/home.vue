@@ -1,20 +1,18 @@
 <template>
   <div>
     <router-view></router-view>
-  <xfooter/>
+    <xfooter/>
   </div>
 </template>
 
 <script>
 // 底部组件
-import xfooter from '../components/xfooter'
+import xfooter from "../components/xfooter";
 
 export default {
   components: {
-    xfooter,
-
+    xfooter
   }
-
 };
 </script>
 
