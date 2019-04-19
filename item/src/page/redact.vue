@@ -6,6 +6,7 @@
         <div class="conte">
           <span class="left" v-text="getWeekDate()"></span>
           <span class="right" style="float:right">
+          
             <iframe
               name="weather_inc"
               src="http://i.tianqi.com/index.php?c=code&id=5&py=guangzhou"
@@ -23,7 +24,7 @@
           " contenteditable="true"></textarea>
 
            <div class="uploadImgBtn" id="uploadImgBtn">
-       <input class="file"  type="file" multiple />
+   <input class="file"  type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"  multiple >
 
     </div>
     <div class="clik">发布</div>
@@ -112,7 +113,7 @@ overflow: hidden;
         background: url("") no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
-        border: 1px solid #ccc;
+
         text-align: center;
         line-height:50px;
     }
@@ -143,6 +144,22 @@ overflow: hidden;
       font-size: 16px;
       text-align: center;
     }
-
+  input {
+        font-size: 0; /* 为了去掉‘未选择任何文件’这几个字，也可以随便弄到哪里*/
+    }
+    /* 注意不是直接input > input[type=button] 哦*/
+    input::-webkit-file-upload-button {
+        background: #efeeee;
+        color: #333;
+        border: 0;
+        width: 100%;
+height: 100%;
+        font-size: 12px;
+        box-shadow: 1px 1px 5px rgba(0,0,0,.1), 0 0 10px rgba(0,0,0,.12);
+    }
+    .file{
+      width: 100%;
+      height: 100%  ;
+    }
 
 </style>
