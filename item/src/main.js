@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
+
 import router from './js/router.js'
 import 'weui'
 import $ from 'jquery'
 import axios from 'axios'
+
+
+
 
 
 
