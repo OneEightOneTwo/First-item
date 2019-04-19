@@ -64,6 +64,7 @@ export default {
 <style scoped>
 #lx {
   margin-top: 50px;
-}
+};
+
 </style>
 

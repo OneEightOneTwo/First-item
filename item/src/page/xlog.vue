@@ -1,21 +1,46 @@
 <template>
   <div id="xlog">
     <h1>一&nbsp;&nbsp;罐</h1>
-    <input type="text" placeholder="username">
-    <input type="password" placeholder="password">
+    <input type="text" placeholder="username" v-model="username">
+    <input type="password" placeholder="password" v-model="password">
     <input type="button" value="未注册" @click="reg()">
-    <input type="button" value="登陆">
+    <input type="button" value="登陆" @click="login()">
   </div>
 </template>
 
 <script>
 export default {
   naem: "xlog",
+  data() {
+    return {
+      username: "",
+      password: ""
+    };
+  },
   methods: {
     reg() {
       // 跳路由
       this.$router.push({ name: "xreg" });
       // console.log("reg");
+    },
+    login() {
+      if (this.username && this.password) {
+    var nickname=this.username;
+    var password=this.password
+        this.$http.post("http://120.79.172.103:8000/user/api/login/",`nickname=${nickname}&password=${password}`)
+          .then((res)=>{
+            console.log(res)
+       
+       
+          if(res.data.code=='4003'){
+    alert('账号或密码错误')
+          }
+         
+
+        })
+      } else {
+        alert("账号或密码不能为空");
+      }
     }
   }
 };

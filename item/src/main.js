@@ -5,8 +5,12 @@ import router from './js/router.js'
 import 'weui'
 import $ from 'jquery'
 import axios from 'axios'
-import store from './js/vuex.js'
+import store from './js/vuex.js'  
 
+
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios,axios)
 
 //vue继承jquery的方法
 Vue.prototype.$ = $
@@ -21,6 +25,6 @@ Vue.config.productionTip = false
 new Vue({
   el: "#app",
   router,
-  store,
+  store,axios,
   render: h => h(App),
 })

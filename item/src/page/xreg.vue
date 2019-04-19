@@ -1,11 +1,11 @@
 <template>
   <div id="xlog">
     <h1>一&nbsp;&nbsp;罐</h1>
-    <input type="text" placeholder="username">
-    <input type="password" placeholder="password">
-    <input type="password" placeholder="confirm password">
+    <input type="text" placeholder="username" v-model="username">
+    <input type="password" placeholder="password" v-model="password">
+    <input type="password" placeholder="confirm password" v-model="re_password">
     <input type="button" value="已注册" @click="log()">
-    <input type="button" value="注册">
+    <input type="button" value="注册" @click="reg()">
   </div>
 </template>
 
@@ -17,6 +17,20 @@ export default {
       // 跳路由
       this.$router.push({ name: "xlog" });
       // console.log("log");
+    },
+    reg() {
+      var nickname = this.username;
+      var password = this.password;
+      var re_password = this.re_password;
+
+      this.$http
+        .post(
+          "http://120.79.172.103:8000/user/api/register/",
+          `nickname=${nickname}&password=${password}&re_password=${re_password}`
+        )
+        .then(response => {
+          console.log(response);
+        });
     }
   }
 };
