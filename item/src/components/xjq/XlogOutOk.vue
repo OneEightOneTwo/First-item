@@ -32,7 +32,6 @@
 <script>
 import bus from "../../js/bus.js";   //引入总线
 
-
 export default {
     data(){
         return{

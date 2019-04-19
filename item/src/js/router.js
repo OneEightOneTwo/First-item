@@ -17,6 +17,8 @@ import xreg from '../page/xreg.vue'
 import xlist from '../page/xlist.vue'
 //头部组件
 import newHeader from '../components/newHeader.vue'
+//聊天界面
+import chat from "../page/chat.vue"
 const routes = [{
         path: '/',
         component: home,
@@ -55,6 +57,10 @@ const routes = [{
         path: '/newHeader',
         component: newHeader,
         name: 'newHeader'
+    },{
+        path:'/chat',
+        component:chat,
+        name:'chat'
     }
 ]
 

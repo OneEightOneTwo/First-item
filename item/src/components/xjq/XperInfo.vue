@@ -16,8 +16,7 @@
       <div class="weui-cell">
         <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
           <img
-            @click="showGallery(touxiang)"
-            :src="touxiang"
+            @click="showGallery()"
             style="width: 50px;display: block"
             
           >
@@ -68,10 +67,10 @@ import bus from "../../js/bus.js";
 export default {
   data() {
     return{
-      touxiang : '../assets/images/touxiang.jpg',
+      // touxiang : '../assets/images/touxiang.jpg',
       bool:1,
-      name : '联系人名称',
-      signature:'个性签名',
+      name : '大力水手',
+      signature:'葬爱家族长老',
       value:'1990-05-02',
       sex:'男'
     }
@@ -90,10 +89,10 @@ export default {
     })
   },
   methods: {
-    showGallery(touxiang) {
+    showGallery() {
       // 通知Xgallery组件出现
       bus.$emit("showGallery", {
-        touxiang   //把 数据 传到 Xgalley 组件
+        // touxiang   //把 数据 传到 Xgalley 组件
       });
     },
     changeInfo(){

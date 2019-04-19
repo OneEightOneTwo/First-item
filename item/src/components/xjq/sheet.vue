@@ -45,7 +45,11 @@
                                 }"
               ></i>
             </span>
-            <span class="likenum" v-text="t.likenum"></span>
+            <span class="likenum" v-text="t.likenum">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dianzan"></use>
+              </svg>
+            </span>
             <span class="reply">
               <i class="iconfont icon-xinxi1"></i>
             </span>
@@ -202,6 +206,8 @@
 }
 </style>
 <script>
+
+
 // 预览图
 // import Xgallery from "../../../components/Xgallery.vue";
 // import state from "../../../observable.js";

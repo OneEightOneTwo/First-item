@@ -16,15 +16,14 @@
       <div class="weui-cell">
         <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
           <img
-            @click="showGallery(touxiang)"
-            :src="touxiang"
+            @click="showGallery()"
             style="width: 50px;display: block"
             
           >
           <!-- <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</span> -->
         </div>
         <div class="weui-cell__bd">
-          <input placeholder="修改名称"  class="changeName" v-model='name'>
+          <input  @click="changeName()" class="changeName" v-model='name'>
           <input placeholder="修改签名"  class="changeSignature" v-model='signature'>
         </div>
       </div>
@@ -72,8 +71,8 @@ export default {
     // 监听  XperInfo 传过来的事件
     bus.$on("changeInfo",data =>{
       this.bool = true;
-    //   this.name = data.name;
-    //   this.signature = data.signature;
+      this.name = data.name;
+      this.signature = data.signature;
       this.value = data.value;
       this.sex = data.sex;
     });
@@ -90,6 +89,9 @@ export default {
               value:this.value
           });  
           this.bool = false;    //隐藏修改页面
+      },
+      changeName(){
+        this.name = '';
       }
   }
 }

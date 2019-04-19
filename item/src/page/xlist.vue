@@ -2,7 +2,12 @@
   <div>
     <newHeader title="遇见"/>
     <div id="lx">
-      <a v-for="(a,index) in haoyou" :key="index" class="weui-media-box weui-media-box_appmsg">
+      <a
+        @click="biubiu()"
+        v-for="(a,index) in haoyou"
+        :key="index"
+        class="weui-media-box weui-media-box_appmsg"
+      >
         <div class="weui-media-box__hd">
           <img class="weui-media-box__thumb" src="../assets/logo.png" alt>
         </div>
@@ -41,8 +46,12 @@ export default {
     };
   },
   components: {
-    newHeader,
-    xfooter
+    newHeader
+  },
+  methods: {
+    biubiu() {
+      this.$router.push({ name: "chat" });
+    }
   }
 };
 </script>
