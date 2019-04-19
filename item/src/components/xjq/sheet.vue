@@ -9,7 +9,7 @@
             >-->
           </span>
         </div>
-        <div class="user_main" @click="gotodetail(t.user_id)">
+        <div class="user_main" >
           <p class="user_name" v-text="t.user_name"></p>
           <p class="user_age">
             <span class="user_sexage">
@@ -37,28 +37,25 @@
           </p>
           <div class="m_bottom">
             <span class="like">
-              <i
-                class="iconfont icon-aixin1"
-                @click.stop="like(index)"
-                :class="{
-                                    'changecolor':t.haslike == 1
-                                }"
-              ></i>
-            </span>
-            <span class="likenum" v-text="t.likenum">
-              <svg class="icon" aria-hidden="true">
+              <svg style="display:block" class="icon" aria-hidden="true">
                 <use xlink:href="#icon-dianzan"></use>
               </svg>
+              <svg style="display:none" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-dianzan1"></use>
+              </svg>
             </span>
+            <span @click="dianzan(index)" class="likenum" v-text="t.likenum"></span>
             <span class="reply">
-              <i class="iconfont icon-xinxi1"></i>
+              <svg class="icon liuyan" aria-hidden="true">
+                <use xlink:href="#icon-liuyan"></use>
+              </svg>
             </span>
             <span class="replynum" v-text="t.replynum"></span>
             <!-- <span class="more">
               <i class="dot"></i>
               <i class="dot"></i>
               <i class="dot"></i>
-            </span> -->
+            </span>-->
           </div>
         </div>
       </li>
@@ -165,6 +162,7 @@
   height: 1.666667rem;
   display: flex;
   align-items: center;
+  padding-left: 7rem;
 }
 .m_bottom span {
   display: flex;
@@ -182,12 +180,12 @@
   color: #252525;
 }
 .m_bottom .likenum {
-  margin-left: 0.25rem;
-  font-size:0.5rem;
+  margin-left: 0.1rem;
+  font-size: 0.5rem;
 }
 .m_bottom .replynum {
-  margin-left: 0.305556rem;
-  font-size:0.5rem;
+  margin-left: 0.1rem;
+  font-size: 0.5rem;
 }
 .m_bottom .more {
   flex: 1;
@@ -204,12 +202,23 @@
   background: #757575;
   border-radius: 50%;
 }
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 0.6rem;
+}
+.liuyan {
+  margin-left: 0.3rem;
+}
 </style>
 <script>
-
+import i from "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
 
 // 预览图
-// import Xgallery from "../../../components/Xgallery.vue";
+// import Xgallery from "./Xgallery.vue";
 // import state from "../../../observable.js";
 export default {
   data() {
@@ -283,9 +292,15 @@ export default {
         this.not_data[index].likenum++;
       }
     },
-    gotodetail(id) {
-      // console.log(111)
-      this.$router.push({ name: "detail", params: { id } });
+    // gotodetail(id) {
+    //   // console.log(111)
+    //   this.$router.push({ name: "detail", params: { id } });
+    // },
+    dianzan(index) {
+      this.not_data[index].likenum ++;
+    },
+    components:{
+      i
     }
   }
   // computed: {
