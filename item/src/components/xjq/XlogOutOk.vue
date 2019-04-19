@@ -8,7 +8,7 @@
         <h2 class="weui-msg__title">登出成功</h2>
         <p class="weui-msg__desc">
           <!-- 内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现
-          <a href="javascript:void(0);">文字链接</a> -->
+          <a href="javascript:void(0);">文字链接</a>-->
         </p>
       </div>
       <div class="weui-msg__opr-area">
@@ -30,19 +30,19 @@
 </template>
 
 <script>
-import bus from "../../js/bus.js";   //引入总线
+import bus from "../../js/bus.js"; //引入总线
 
 export default {
-    data(){
-        return{
-            bool:0    
-        }
-    },
-    created(){
-     // 监听  logout 传过来的事件
-    bus.$on("XlogOutOk",() =>{
+  data() {
+    return {
+      bool: 0
+    };
+  },
+  created() {
+    // 监听  logout 传过来的事件
+    bus.$on("XlogOutOk", () => {
       this.bool = true;
     });
-}
-}
+  }
+};
 </script>

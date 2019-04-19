@@ -25,7 +25,7 @@ export default {};
 }
 .line_biu span {
   display: inline-block;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 15px;
   border: 0.5px solid rgb(116, 116, 255);
   background: rgb(241, 241, 241);

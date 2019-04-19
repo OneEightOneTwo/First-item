@@ -63,7 +63,7 @@
         </div>
       </li>
     </ul>
-    <Xgallery/>
+    <!-- <Xgallery/> -->
   </div>
 </template>
 <style>

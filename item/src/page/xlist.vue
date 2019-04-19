@@ -3,7 +3,7 @@
     <newHeader title="遇见"/>
     <div id="lx">
       <a
-        @click="biubiu()"
+        @click="biubiu(a.title)"
         v-for="(a,index) in haoyou"
         :key="index"
         class="weui-media-box weui-media-box_appmsg"
@@ -17,14 +17,14 @@
         </div>
       </a>
     </div>
-    <xfooter />
   </div>
 </template>
 <script>
 //引入头部组件
 import newHeader from "../components/newHeader.vue";
-import xfooter from '../components/xfooter'
+import store from "../js/vuex.js";
 export default {
+  store,
   data() {
     return {
       haoyou: [
@@ -42,14 +42,16 @@ export default {
           title: "我是一个标题2",
           content: "我是一段比短的内容文字啊啊啊啊啊啊啊啊2"
         }
-      ]
+      ],
+      isok: true
     };
   },
   components: {
     newHeader
   },
   methods: {
-    biubiu() {
+    biubiu(title) {
+      this.$store.state.count = title;
       this.$router.push({ name: "chat" });
     }
   }

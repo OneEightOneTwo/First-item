@@ -5,6 +5,9 @@ import router from './js/router.js'
 import 'weui'
 import $ from 'jquery'
 import axios from 'axios'
+import store from './js/vuex.js'
+
+
 //vue继承jquery的方法
 Vue.prototype.$ = $
 //vue继承axios的方法
@@ -18,5 +21,6 @@ Vue.config.productionTip = false
 new Vue({
   el: "#app",
   router,
+  store,
   render: h => h(App),
 })
