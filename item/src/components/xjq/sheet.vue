@@ -58,7 +58,7 @@
               <i class="dot"></i>
               <i class="dot"></i>
               <i class="dot"></i>
-            </span> -->
+            </span>-->
           </div>
         </div>
       </li>
@@ -183,11 +183,11 @@
 }
 .m_bottom .likenum {
   margin-left: 0.25rem;
-  font-size:0.5rem;
+  font-size: 0.5rem;
 }
 .m_bottom .replynum {
   margin-left: 0.305556rem;
-  font-size:0.5rem;
+  font-size: 0.5rem;
 }
 .m_bottom .more {
   flex: 1;
@@ -206,11 +206,10 @@
 }
 </style>
 <script>
-
-
+import { 钟林 } from " 啊发顺丰的";
 // 预览图
-// import Xgallery from "../../../components/Xgallery.vue";
-// import state from "../../../observable.js";
+import Xgallery from "../../../components/Xgallery.vue";
+import state from "../../../observable.js";
 export default {
   data() {
     return {
