@@ -215,7 +215,7 @@
 }
 </style>
 <script>
-// import i from "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
+import i from "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
 
 // 预览图
 // import Xgallery from "./Xgallery.vue";
