@@ -21,7 +21,6 @@ export default {
     reg() {
       // 跳路由
       this.$router.push({ name: "xreg" });
-
     },
     login() {
       if (this.username && this.password) {
@@ -33,24 +32,21 @@ export default {
             `nickname=${nickname}&password=${password}`
           )
           .then(res => {
-
             var value = res.data.data.uid;
             document.cookie = "uid=" + value;
-           
-       //跳到首页
-        
+
+            //跳到首页
 
             if (res.data.code == "4003") {
               alert("账号或密码错误");
-            }else{
-   this.$router.push({ name: "hot" });
+            } else {
+              this.$router.push({ name: "hot" });
             }
           });
       } else {
         alert("账号或密码不能为空");
       }
-    },
-   
+    }
   }
 };
 </script>

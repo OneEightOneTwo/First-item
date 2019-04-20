@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { setTimeout } from "timers";
 export default {
   naem: "xreg",
   data() {
@@ -19,28 +20,44 @@ export default {
       re_password: ""
     };
   },
+  // computed:{},
   methods: {
     log() {
       // 跳路由
       this.$router.push({ name: "xlog" });
-      // console.log("log");
     },
     reg() {
-      var nickname = this.username;
-      var password = this.password;
-      var re_password = this.re_password;
-      this.$http
-        .post(
-          // "http://120.79.172.103:8000/user/api/register/",
-          "http://10.3.139.75:8000/user/api/register/",
-
-          `nickname=${nickname}&password=${password}&re_password=${re_password}`
-        )
-        .then(response => {
-          console.log(response);
-        });
+      if (
+        this.username.indexOf(" ") == -1 &&
+        this.password.indexOf(" ") == -1 &&
+        this.username &&
+        this.password
+      ) {
+        this.$http
+          .post(
+            "http://120.79.172.103:8000/user/api/register/",
+            `nickname=${this.username}&password=${this.password}&re_password=${
+              this.re_password
+            }`
+          )
+          .then(response => {
+            if (response.data.data == "username alread exist") {
+              alert("用户名已注册");
+            } else if (response.data.data.uid) {
+              alert(
+                "注册成功,您是第" +
+                  response.data.data.uid +
+                  "位加入一罐的小伙伴"
+              );
+            } else {
+              alert("未知错误");
+            }
+          });
+      } else {
+        alert("不能输入含有空格的字符");
+      } //if-else-----------
     }
-  }
+  } //methods------
 };
 </script>
 
