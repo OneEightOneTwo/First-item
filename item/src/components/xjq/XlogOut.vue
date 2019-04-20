@@ -33,6 +33,7 @@ export default {
       // 通知 XlogOutOk 组件出现
       bus.$emit("XlogOutOk");  
       this.bool = false;    //隐藏logout页面
+      document.cookie = '';
     },
     //点取消时，logout 页面消失，个人信息页面出现
     cancelLogOut(){

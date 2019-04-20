@@ -158,11 +158,10 @@
   font-size: 0.342593rem;
 }
 .m_bottom {
-  width: 100%;
   height: 1.666667rem;
   display: flex;
   align-items: center;
-  padding-left: 7rem;
+  padding-left: 6rem;
 }
 .m_bottom span {
   display: flex;

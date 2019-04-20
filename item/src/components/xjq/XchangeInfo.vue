@@ -43,7 +43,7 @@
       </div>
       <div  @click="backToInfo()" class="weui-cell weui-cell_access">
         <div class="weui-cell__bd">
-          <span  style="vertical-align: middle">保存</span>
+          <span style="vertical-align: middle">保存</span>
           <!-- <span class="weui-badge" style="margin-left: 5px;">New</span> -->
           <!-- <span class="weui-cell__ft">详细信息</span> -->
         </div>
@@ -64,17 +64,19 @@ export default {
         name:'',
         signature:'',
         sex :'',
-        value : ''
+        value : '',
+        touxiang :''
     };
   },
   created() {
     // 监听  XperInfo 传过来的事件
     bus.$on("changeInfo",data =>{
-      this.bool = true;
+      this.bool = 1;
       this.name = data.name;
       this.signature = data.signature;
       this.value = data.value;
       this.sex = data.sex;
+      this.touxiang = data.touxiang;
     });
   },
   methods:{
@@ -89,6 +91,13 @@ export default {
               value:this.value
           });  
           this.bool = false;    //隐藏修改页面
+          //发起ajax请求
+          this.$http
+            .post("http://120.79.172.103:8000/user/api/set_profile/",`uid=1&nickname=${this.name}&avatar=${this.touxiang}
+            &sex=${this.sex}&birthday=${this.value}`)
+            .then(response => {
+              console.log(response)
+            });
       },
       changeName(){
         this.name = '';
