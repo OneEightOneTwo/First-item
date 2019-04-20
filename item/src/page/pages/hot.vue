@@ -2,7 +2,7 @@
    <div id="app">
     <newHeader :title="'树洞' " :ev="aa" ></newHeader>
     <xmain/>
-    <xfooter/>
+    <xfooter tab="0"/>
   </div>
 </template>
 

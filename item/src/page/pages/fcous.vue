@@ -9,7 +9,7 @@
     <XlogOut></XlogOut>
     <XlogOutOk></XlogOutOk>
     <div>
-      <xfooter />
+      <xfooter tab="2" />
     </div>
   </div>
 </template>

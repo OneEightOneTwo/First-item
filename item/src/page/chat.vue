@@ -8,10 +8,12 @@
       <input type="text">
       <button>发送</button>
     </div>
+
   </div>
 </template>
 
 <script>
+
 import biubiu from "./pages/biubiu.vue";
 import newHeader from "../components/newHeader.vue";
 import store from "../js/vuex.js";

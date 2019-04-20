@@ -17,7 +17,7 @@
         </div>
       </a>
     </div>
-    <xfooter />
+    <xfooter tab="1"/>
   </div>
 </template>
 <script>
