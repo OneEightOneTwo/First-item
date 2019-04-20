@@ -12,6 +12,7 @@ import newHeader from "../../components/newHeader";
 import xfooter from "../../components/xfooter";
 
 export default {
+  
   data() {
     var edeaa = this;
     return {

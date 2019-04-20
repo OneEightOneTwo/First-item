@@ -12,7 +12,6 @@ Vue.use(VueAxios,axios)
 
 //vue继承jquery的方法
 Vue.prototype.$ = $
-
 //vue继承axios的方法
 Vue.prototype.$axios = axios
 
