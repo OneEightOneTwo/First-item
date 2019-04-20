@@ -17,6 +17,13 @@ Vue.use(VueAxios, axios);
 
 export default {
   naem: "xreg",
+  data(){
+return{
+  username:'',
+  password:'',
+  re_password:""
+}
+  },
   methods: {
     log() {
       // 跳路由
