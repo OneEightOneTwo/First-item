@@ -31,9 +31,7 @@ export default {
       var re_password = this.re_password;
       this.$http
         .post(
-          // "http://120.79.172.103:8000/user/api/register/",
-          "http://10.3.139.75:8000/user/api/register/",
-
+          "http://120.79.172.103:8000/user/api/register/",
           `nickname=${nickname}&password=${password}&re_password=${re_password}`
         )
         .then(response => {

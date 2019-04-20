@@ -20,7 +20,7 @@ export default {
         edeaa.$router.push({ name: "redact" });
       }
     };
-  },
+  }, 
   components: {
     xmain,
     newHeader,
