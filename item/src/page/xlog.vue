@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       username: "",
-      password: "",
+      password: ""
     };
   },
   methods: {
@@ -25,19 +25,21 @@ export default {
     },
     login() {
       if (this.username && this.password) {
-    var nickname=this.username;
-    var password=this.password
-        this.$http.post("http://120.79.172.103:8000/user/api/login/",`nickname=${nickname}&password=${password}`)
-          .then((res)=>{
-            console.log(res)
-       
-       
-          if(res.data.code=='4003'){
-    alert('账号或密码错误')
-          }
-         
+        var nickname = this.username;
+        var password = this.password;
+        this.$http
+          .post(
+            // "http://120.79.172.103:8000/user/api/login/",
+             "http://10.3.139.75:8000/user/api/register/",
+            `nickname=${nickname}&password=${password}`
+          )
+          .then(res => {
+            console.log(res);
 
-        })
+            if (res.data.code == "4003") {
+              alert("账号或密码错误");
+            }
+          });
       } else {
         alert("账号或密码不能为空");
       }

@@ -10,19 +10,14 @@
 </template>
 
 <script>
-import Vue from "vue";
-import axios from "axios";
-import VueAxios from "vue-axios";
-Vue.use(VueAxios, axios);
-
 export default {
   naem: "xreg",
-  data(){
-return{
-  username:'',
-  password:'',
-  re_password:""
-}
+  data() {
+    return {
+      username: "",
+      password: "",
+      re_password: ""
+    };
   },
   methods: {
     log() {
@@ -34,10 +29,11 @@ return{
       var nickname = this.username;
       var password = this.password;
       var re_password = this.re_password;
-
       this.$http
         .post(
-          "http://120.79.172.103:8000/user/api/register/",
+          // "http://120.79.172.103:8000/user/api/register/",
+          "http://10.3.139.75:8000/user/api/register/",
+
           `nickname=${nickname}&password=${password}&re_password=${re_password}`
         )
         .then(response => {
