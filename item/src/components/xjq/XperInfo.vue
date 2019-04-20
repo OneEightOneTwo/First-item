@@ -15,7 +15,7 @@
     <div class="weui-cells" style="margin-top:0px;">
       <div class="weui-cell">
         <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-          <img @click="showGallery()" style="width: 50px;display: block">
+          <img src="../../assets/logo.png" @click="showGallery()" style="width: 50px;display: block">
           <!-- <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</span> -->
         </div>
         <div class="weui-cell__bd">
@@ -67,7 +67,6 @@
 
 <script>
 import bus from "../../js/bus.js";
-// import touxiang from '../assets/images/touxiang.jpg';
 
 
 export default {
@@ -80,7 +79,6 @@ export default {
       value: "",
       sex: "",
       touxiang: "",
-      arr: []
     };
   },
   created() {
@@ -95,16 +93,20 @@ export default {
     bus.$on("backToInfo", () => {
       this.bool = 1;
     });
-    var _this=this
-    function reg() {
-      _this.$http
-        .get("http://120.79.172.103:8000/user/api/get_profile/")
-        .then(response => {
-          // this.arr = response.data;
-          console.log(response);
-        });
-    }
-    reg();
+    bus.$on('changeInfo2', () => {
+      bus.$emit("changeInfo2");
+      this.bool = true;
+    }); 
+    //发起ajax请求
+    this.$http
+      .post("http://120.79.172.103:8000/user/api/get_profile/",'uid=1')
+      .then(response => {
+        console.log(response)
+        this.name = response.data.data.nickname;
+        this.touxiang = response.data.data.avatar;
+        this.value = response.data.data.birthday;
+        this.sex = response.data.data.sex;
+      });
   },
   methods: {
     showGallery() {
@@ -120,7 +122,8 @@ export default {
         name: this.name, //点击 修改 的时候，把个人信息带到修改页作为默认值
         signature: this.signature,
         sex: this.sex,
-        value: this.value
+        value: this.value,
+        touxiang:this.touxiang
       });
       this.bool = 0;
     },

@@ -27,12 +27,12 @@ export default {
     // 监听  XperInfo 传过来的事件
     bus.$on("showGallery", data => {
       this.touxiang = data.touxiang;
-      this.bool = true;
+      this.bool = !(this.bool);
     });
   },
   methods:{
     hideGallery() {
-      bus.$emit("changeInfo");
+      bus.$emit("changeInfo2");
       this.bool = false;
     }
   }
