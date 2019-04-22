@@ -20,11 +20,11 @@ import newHeader from '../components/newHeader.vue'
 //聊天界面
 import chat from "../page/chat.vue"
 const routes = [{
-        path: '/',
+        path: '/home',
         component: home,
         name: 'home',
         children: [{
-            path: '/',
+            path: 'hot',
             component: hot,
             name: 'hot',
         }, {
@@ -42,7 +42,7 @@ const routes = [{
         component: redact,
         name: 'redact'
     }, {
-        path: '/xlog',
+        path: '/',
         component: xlog,
         name: 'xlog'
     }, {
@@ -53,10 +53,10 @@ const routes = [{
         path: '/newHeader',
         component: newHeader,
         name: 'newHeader'
-    },{
-        path:'/chat',
-        component:chat,
-        name:'chat'
+    }, {
+        path: '/chat',
+        component: chat,
+        name: 'chat'
     }
 ]
 
