@@ -5,9 +5,10 @@ import router from './js/router.js'
 import 'weui'
 import $ from 'jquery'
 import store from './js/vuex.js' 
-
+//vue继承axios的方法
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+
 Vue.use(VueAxios,axios)
 
 //vue继承jquery的方法

@@ -9,8 +9,8 @@
             >-->
           </span>
         </div>
-        <div class="user_main" >
-          <p class="user_name" v-text="t.user_name"></p>
+        <div class="user_main">
+          <p class="user_name" v-text="t.nickname"></p>
           <p class="user_age">
             <span class="user_sexage">
               <span class="sex" v-text="t.user_sex"></span>
@@ -18,7 +18,7 @@
               <span class="age" v-text="t.user_age"></span>
             </span>
           </p>
-          <p class="user_say" v-text="t.user_say"></p>
+          <p class="user_say" v-text="t.message"></p>
           <div class="user_photo">
             <span
               class="user_img"
@@ -44,7 +44,7 @@
                 <use xlink:href="#icon-dianzan1"></use>
               </svg>
             </span>
-            <span @click="dianzan(index)" class="likenum" v-text="t.likenum"></span>
+            <span @click="dianzan(index)" class="likenum" v-text="t.praise"></span>
             <span class="reply">
               <svg class="icon liuyan" aria-hidden="true">
                 <use xlink:href="#icon-liuyan"></use>
@@ -63,6 +63,54 @@
     <!-- <Xgallery/> -->
   </div>
 </template>
+<script>
+import "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
+
+import { scrypt } from "crypto";
+export default {
+  data() {
+    return {
+      not_data: [],
+      change: ""
+    };
+  },
+
+  methods: {
+    //预览图片
+    showGallery(src) {
+      this.state.isgallery.src = src;
+      this.state.isgallery.bool = true;
+    },
+    like(index) {
+      if (this.not_data[index].haslike == 1) {
+        this.not_data[index].haslike = 0;
+        this.not_data[index].praise--;
+      } else {
+        this.not_data[index].haslike = 1;
+        this.not_data[index].praise++;
+      }
+    },
+
+    dianzan(index) {
+      this.not_data[index].praise++;
+    }
+    //创造前 虚拟dom没有，但数据有
+  },
+  created() {
+    this.$http
+      .post("http://120.79.172.103:8000/social/api/get_all_words/", `uid=7`)
+      .then(res => {
+        res = res.data.data;
+        console.log(res);
+
+        this.not_data = res;
+      });
+  }
+};
+</script>
+
+
+
 <style>
 .iconfont.icon-aixin1.changecolor {
   color: red;
@@ -158,10 +206,11 @@
   font-size: 0.342593rem;
 }
 .m_bottom {
+  /* width: 100%; */
   height: 1.666667rem;
   display: flex;
   align-items: center;
-  padding-left: 6rem;
+  padding-left: 7.5rem;
 }
 .m_bottom span {
   display: flex;
@@ -213,101 +262,4 @@
   margin-left: 0.3rem;
 }
 </style>
-<script>
-import "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
 
-// 预览图
-// import Xgallery from "./Xgallery.vue";
-// import state from "../../../observable.js";
-export default {
-  data() {
-    return {
-      not_data: [
-        {
-          id: "01",
-          user_id: "01",
-          // user_headphoto:require('../../../assets/400 X 400.jpg'),
-          user_name: "茂茂",
-          user_sex: "♀",
-          user_age: "30",
-          user_say: "新动态 , 点个赞吧",
-          // user_showimg:['../../../assets/bigimgblack2.jpg','../../../assets/bigimgblack2.jpg'],
-          pushtime: "21分钟前",
-          distance: "5.3km",
-          haslike: 1, //是否已点赞
-          likenum: "5",
-          replynum: "1"
-        },
-        {
-          id: "02",
-          user_id: "01",
-          // user_headphoto:require('../../../assets/400 X 400.jpg'),
-          user_name: "茂茂",
-          user_sex: "♀",
-          user_age: "30",
-          user_say: "新动态 , 点个赞吧",
-          // user_showimg:['../../../assets/bigimgblack2.jpg','../../../assets/bigimgblack2.jpg'],
-          pushtime: "21分钟前",
-          distance: "5.3km",
-          haslike: 0,
-          likenum: "5",
-          replynum: "1"
-        },
-        {
-          id: "02",
-          user_id: "01",
-          // user_headphoto:require('../../../assets/400 X 400.jpg'),
-          user_name: "茂茂",
-          user_sex: "♀",
-          user_age: "30",
-          user_say: "新动态 , 点个赞吧",
-          // user_showimg:['../../../assets/bigimgblack2.jpg','../../../assets/bigimgblack2.jpg'],
-          pushtime: "21分钟前",
-          distance: "5.3km",
-          haslike: 0,
-          likenum: "5",
-          replynum: "1"
-        }
-      ],
-      change: ""
-    };
-  },
-  // components: {
-  // Xgallery
-  // },
-  methods: {
-    //预览图片
-    showGallery(src) {
-      this.state.isgallery.src = src;
-      this.state.isgallery.bool = true;
-    },
-    like(index) {
-      // console.log(this.$refs.likecolor[index].offsetHeight)
-      if (this.not_data[index].haslike == 1) {
-        this.not_data[index].haslike = 0;
-        this.not_data[index].likenum--;
-      } else {
-        this.not_data[index].haslike = 1;
-        this.not_data[index].likenum++;
-      }
-    },
-    // gotodetail(id) {
-    //   // console.log(111)
-    //   this.$router.push({ name: "detail", params: { id } });
-    // },
-    dianzan(index) {
-      this.not_data[index].likenum ++;
-    }
-    // ,
-    // components:{
-    //   i
-    // }
-  }
-  // computed: {
-  //   //用这个来拿公有数据
-  //   state() {
-  //     return state;
-  //   }
-  // }
-};
-</script>

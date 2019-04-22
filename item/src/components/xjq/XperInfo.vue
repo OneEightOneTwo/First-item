@@ -15,7 +15,11 @@
     <div class="weui-cells" style="margin-top:0px;">
       <div class="weui-cell">
         <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-          <img src="../../assets/logo.png" @click="showGallery()" style="width: 50px;display: block">
+          <img
+            src="../../assets/logo.png"
+            @click="showGallery()"
+            style="width: 50px;display: block"
+          >
           <!-- <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</span> -->
         </div>
         <div class="weui-cell__bd">
@@ -68,7 +72,6 @@
 <script>
 import bus from "../../js/bus.js";
 
-
 export default {
   data() {
     return {
@@ -78,7 +81,7 @@ export default {
       signature: "",
       value: "",
       sex: "",
-      touxiang: "",
+      touxiang: ""
     };
   },
   created() {
@@ -93,15 +96,15 @@ export default {
     bus.$on("backToInfo", () => {
       this.bool = 1;
     });
-    bus.$on('changeInfo2', () => {
+    bus.$on("changeInfo2", () => {
       bus.$emit("changeInfo2");
       this.bool = true;
-    }); 
+    });
     //发起ajax请求
     this.$http
-      .post("http://120.79.172.103:8000/user/api/get_profile/",'uid=1')
+      .post("http://120.79.172.103:8000/user/api/get_profile/", "uid=3")
       .then(response => {
-        console.log(response)
+        console.log(response);
         this.name = response.data.data.nickname;
         this.touxiang = response.data.data.avatar;
         this.value = response.data.data.birthday;
@@ -123,7 +126,7 @@ export default {
         signature: this.signature,
         sex: this.sex,
         value: this.value,
-        touxiang:this.touxiang
+        touxiang: this.touxiang
       });
       this.bool = 0;
     },
