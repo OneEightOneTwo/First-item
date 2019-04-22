@@ -31,8 +31,8 @@
             </span>
           </div>
           <p class="time_dis">
-            <span class="time" v-text="t.stime.slice(10,16)"></span>
-
+            <span class="time" v-text="t.pushtime"></span>
+            ·
             <span class="distance" v-text="t.distance"></span>
           </p>
           <div class="m_bottom">
@@ -64,8 +64,6 @@
   </div>
 </template>
 <script>
-import "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
-
 export default {
   data() {
     return {
@@ -73,12 +71,6 @@ export default {
       change: ""
     };
   },
-
-
- 
-//2.在template中使用，例如：
-//time是需要转换的时间戳，changeTime是过滤器中定义的方法
-// <span>{{time | changeTime}}</span>
 
   methods: {
     //预览图片
@@ -110,27 +102,8 @@ export default {
 
         this.not_data = res;
 
-        // {
-        // this.not_data[i] = {
-        //   id: "01",
-        //   user_id: "01",
-        //   user_name: res[i].nickname,
-        //   user_sex: "♀",
-        //   user_age: "30",
-        //   user_say: "新动态 , 点个赞吧",
-        //   pushtime: "21分钟前",
-        //   distance: "5.3km",
-        //   haslike: 1, //是否已点赞
-        //   likenum: "5",
-        //   replynum: "1"
-        // };
-
-        
-
       });
-  },
-
-
+  }
 };
 </script>
 
@@ -231,10 +204,11 @@ export default {
   font-size: 0.342593rem;
 }
 .m_bottom {
+  width: 100%;
   height: 1.666667rem;
   display: flex;
   align-items: center;
-  padding-left: 6rem;
+  padding-left: 7rem;
 }
 .m_bottom span {
   display: flex;
@@ -286,9 +260,4 @@ export default {
   margin-left: 0.3rem;
 }
 </style>
-<<<<<<< Updated upstream
-<script>
-import  "../../../public/iconfont/font_pqa23vfmvk/font_rjx4w0pg0us/iconfont.js";
-=======
->>>>>>> Stashed changes
 
